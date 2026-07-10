@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+#specs
+specs/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Local content archive (raw content stored by detection_id)
+data/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# pnpm
+.pnpm-debug.log

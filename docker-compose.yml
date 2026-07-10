@@ -1,0 +1,27 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: hopwatch-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: hopwatch
+      POSTGRES_PASSWORD: hopwatch
+      POSTGRES_DB: hopwatch
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: hopwatch-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+volumes:
+  postgres_data:
+  redis_data:
